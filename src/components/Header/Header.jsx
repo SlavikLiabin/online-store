@@ -37,21 +37,26 @@ const Header = () => {
               placeholder="Search for anything... "
               autoComplete="off"
               onChange={() => {}}
-              value={}
+              value=""
             />
           </div>
-          <div className={styles.box}></div>
+          {false && <div className={styles.box}></div>}
         </form>
 
         <div className={styles.account}>
           <Link to={ROUTES.HOME} className={styles.favourites}>
-            {/* 20.56 */}
-          <svg className={styles["icon-fav"]}>
+            <svg className={styles["icon-fav"]}>
               <use xlinkHref={`${process.env.PUBLIC_URL}/sprite.svg#heart`} />
             </svg>
           </Link>
-        </div>
 
+          <Link to={ROUTES.CART} className={styles.cart}>
+            <svg className={styles["icon-cart"]}>
+              <use xlinkHref={`${process.env.PUBLIC_URL}/sprite.svg#bag`} />
+            </svg>
+            <span className={styles.count}>2</span>
+          </Link>
+        </div>
       </div>
     </div>
   );
